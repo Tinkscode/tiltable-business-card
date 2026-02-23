@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Tiltable Business Card with Editable Text & Download</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card" id="card" tabindex="0" aria-label="Business card editor"
+            style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div id="logoContainer" aria-label="Logo container" title="Logo">
+                <!-- Logo image goes here -->
+            </div>
+            <div>
+                <div class="field name" contenteditable="true" data-placeholder="Your Name" aria-label="Name">John Doe
+                </div>
+                <div class="field title" contenteditable="true" data-placeholder="Your Title" aria-label="Title">Web
+                    Developer</div>
+            </div>
+            <div class="contact">
+                <div class="field" contenteditable="true" data-placeholder="Email" aria-label="Email">
+                    john.doe@example.com</div>
+                <div class="field" contenteditable="true" data-placeholder="Phone" aria-label="Phone">+1 234 567 8900
+                </div>
+                <div class="field" contenteditable="true" data-placeholder="Website" aria-label="Website">
+                    www.johndoe.com</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls" aria-label="Card customization controls">
+
+        <label for="colorStart" class="color-label" style="position: relative;">
+            Gradient Start
+            <div class="color-circle" id="circleStart" style="background-color: #0052D4;"></div>
+            <input type="color" id="colorStart" value="#0052D4" aria-describedby="descColorStart" />
+        </label>
+
+        <label for="colorMid" class="color-label" style="position: relative;">
+            Gradient Middle
+            <div class="color-circle" id="circleMid" style="background-color: #4364F7;"></div>
+            <input type="color" id="colorMid" value="#4364F7" aria-describedby="descColorMid" />
+        </label>
+
+        <label for="colorEnd" class="color-label" style="position: relative;">
+            Gradient End
+            <div class="color-circle" id="circleEnd" style="background-color: #6FB1FC;"></div>
+            <input type="color" id="colorEnd" value="#6FB1FC" aria-describedby="descColorEnd" />
+        </label>
+
+        <label for="fontFamily">Font Family
+            <select id="fontFamily" aria-describedby="descFontFamily">
+                <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" selected>Segoe UI</option>
+                <option value="'Montserrat', sans-serif">Montserrat</option>
+                <option value="'Arial', sans-serif">Arial</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Georgia', serif">Georgia</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="'Verdana', sans-serif">Verdana</option>
+            </select>
+        </label>
+
+        <label for="logoUpload">Upload Logo
+            <input type="file" id="logoUpload" accept="image/*" aria-describedby="descLogoUpload" />
+        </label>
+
+    </div>
+
+    <button id="downloadBtn" aria-label="Download the customized business card as an image">Download Card</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
